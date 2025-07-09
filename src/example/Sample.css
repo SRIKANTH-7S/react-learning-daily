@@ -1,0 +1,20 @@
+h1{
+    color: aqua;
+}
+
+#one{
+    color: rgb(54, 165, 220);
+}
+#two{
+    color: brown;
+    text-align: center;
+}
+#main{
+    border: 5px solid;
+    border-color: blue;
+}
+
+#img img{
+    height: 250px;
+    width: 250px;
+}

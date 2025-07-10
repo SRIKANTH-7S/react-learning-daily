@@ -1,3 +1,5 @@
+import {useState, useEffect} from 'react'
+
 
 //nested components
 
@@ -53,6 +55,67 @@ const Images=()=>{
   )
 }
 
+
+//useState in Hooks(State management)
+
+const Hook=()=>{
+
+  const[city, setCity]=useState("Warangal")
+  
+//change the current state
+  const handleChange = () => {
+    setCity("Jangaon");
+  };
+
+
+  return(
+    <div>
+      <h2>We are dealing with the useState Hook</h2>
+      <h3>City: {city}</h3>
+      <button onClick={handleChange}>Change City</button>
+    </div>
+  )
+}
+
+
+// useEffect Hook demo (Side-effect handling)
+
+const EffectDemo = () => {
+  const [count, setCount] = useState(0);
+
+  // useEffect explanation in Telugu mix:
+  // Ee function render ayyaka or count change ayyaka run avuthundi.
+  useEffect(() => {
+    console.log("useEffect triggered: Count = " + count);
+    // Alert ki baduluga console.log vesaam to avoid popup irritation
+  }, [count]);
+
+  return (
+    <div>
+      <h2>useEffect Hook Example</h2>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment Count</button>
+    </div>
+  )
+}
+
+//Ternary Operator
+
+const Ternary=() => {
+  const[Test,setTest]=useState(1)
+
+useEffect(() => {
+  if (Test === 1) {
+    setTest(2); // only set once
+  }
+}, [Test]);
+
+return(
+  <div>Ternary operator related</div>
+)
+
+}
+
 function Sample() {
   return (
     <div>Sample
@@ -62,6 +125,9 @@ function Sample() {
         <Dynamic/>
         <Styling/>
         <Images/>
+        <Hook/>
+        <EffectDemo/>
+        <Ternary/>
     </div>
   )
 }
